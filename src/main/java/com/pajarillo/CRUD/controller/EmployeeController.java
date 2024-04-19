@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "http://localhost:4200") // Allow requests from Angular app
 public class EmployeeController {
 
     @Autowired
@@ -25,7 +26,7 @@ public class EmployeeController {
     }
 
     //Insert new employee
-    @PostMapping("/add/employees")
+    @PostMapping("/employees")
     public Employee insertEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
@@ -40,7 +41,7 @@ public class EmployeeController {
        return ResponseEntity.ok(emp);
     }
 
-    @PutMapping("/update/employees/{empId}")
+    @PutMapping("/employees/{empId}")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee existingEmp,
                                                    @PathVariable Long empId){
 
@@ -60,14 +61,14 @@ public class EmployeeController {
     }
 
     //Delete Employee using Employee ID
-    @DeleteMapping("delete/employees/{empId}")
+    @DeleteMapping("employees/{empId}")
     public ResponseEntity<String> deleteEmployee(@PathVariable Long empId){
 
         Optional<Employee> employee = employeeRepository.findById(empId);
 
         if (employee.isPresent()){
             employeeRepository.deleteById(empId);
-            return ResponseEntity.ok("Employee Deleted Successfully.");
+            return ResponseEntity.ok("{\"message\": \"Employee Deleted Successfully\"}");
         }
         else{
             return ResponseEntity.notFound().build();
