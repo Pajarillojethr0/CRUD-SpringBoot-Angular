@@ -1,21 +1,40 @@
-<h2>Employee List</h2>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        <tr *ngFor = "let employee of employees">
-            <td>{{employee.firstName}}</td>
-            <td>{{employee.lastName}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.password}}</td>
-        </tr>
-    </tbody>
-</table>
+<section class="sectionClass">
+    <div class="card">
+        <div class="card-header">
+            <h2 id="titleEM" class="card-title">Employee List</h2>
+        </div>
+        <div class="card-body" style="max-height: calc(90% - 30px); overflow-y: auto;">
+            <table class="table table-striped custom-table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td>{{employee.firstName}}</td>
+                        <td>{{employee.lastName}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.password}}</td>
+                        <td>
+                            <button (click)="updateEmployee(employee.id)" class="action-button">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                            <button (click)="updateEmployee(employee.id)" class="action-button">
+                                <i class="fa-solid fa-pencil" style="color: #0b6019;"></i>
+                            </button>
+                            <label> </label>
+                            <button (click)="deleteEmployee(employee.id)" class="action-button">
+                                <i class="fa-solid fa-trash" style="color: #a81005;"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
