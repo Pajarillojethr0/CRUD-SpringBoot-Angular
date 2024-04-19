@@ -1,29 +1,42 @@
-<div class="col-md-6 offset-md-3">
-    <h3> Add Employee</h3>
 
-<form  (ngSubmit) = "saveEmployee()">
 
-    <div class="form-group">
-        <label >First Name</label>
-        <input type="text" class="form-control" id="firstName"
-        [(ngModel)] = "employee.firstName" name = "firstName">
-    </div>
-    <div class="form-group">
-        <label >Last Name</label>
-        <input type="text" class="form-control" id="lastName"
-        [(ngModel)] = "employee.lastName" name = "lastName">
-    </div>
-    <div class="form-group">
-        <label >Email</label>
-        <input type="text" class="form-control" id="email"
-        [(ngModel)] = "employee.email" name = "email">
-    </div>
-    <div class="form-group">
-        <label >Password</label>
-        <input type="text" class="form-control" id="password"
-        [(ngModel)] = "employee.password" name = "password">
-    </div>
+<section class="sectionClass">
+    <div class="card col-md-6 offset-md-3 no-padding">
+        <div class="card-header">
+            <h2 id="titleEM" class="card-title">Add Employee</h2>
+        </div>
+        <div class="card-body" style="max-height: calc(90% - 30px); overflow-y: auto;">
+            <form  (ngSubmit) = "saveEmployee()">
 
-    <button class="btn btn-success" type="submit">Submit</button>
-</form>
-</div>
+                <div class="form-group">
+                    <label >First Name</label>
+                    <input type="text" class="form-control" id="firstName"
+                    [(ngModel)] = "employee.firstName" name = "firstName">
+                </div>
+                <div class="form-group">
+                    <label >Last Name</label>
+                    <input type="text" class="form-control" id="lastName"
+                    [(ngModel)] = "employee.lastName" name = "lastName">
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="text" class="form-control" id="email"
+                    [(ngModel)] = "employee.email" name = "email">
+                </div>
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="text" class="form-control" id="password"
+                    [(ngModel)] = "employee.password" name = "password">
+                </div>
+            
+                <div class="text-right">
+                    <button class="btn btn-success" type="submit">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Employee
+                    </button>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</section>

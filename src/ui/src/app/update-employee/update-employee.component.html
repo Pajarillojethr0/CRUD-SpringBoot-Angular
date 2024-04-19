@@ -1,8 +1,9 @@
-<div class="col-md-6 offset-md-3">
-    <div class="card">
-        <div class="card-body">
-            <h3 class="card-title">Update Employee</h3>
-
+<section class="sectionClass">
+    <div class="card col-md-6 offset-md-3 no-padding">
+        <div class="card-header">
+            <h2 id="titleEM" class="card-title">Edit Employee</h2>
+        </div>
+        <div class="card-body" style="max-height: calc(90% - 30px); overflow-y: auto;">
             <form (ngSubmit)="updateEmployee()">
 
                 <div class="form-group">
@@ -23,9 +24,12 @@
                 </div>
 
                 <div class="text-right">
-                    <button class="btn btn-success" type="submit">Save</button>
+                    <button class="btn btn-success" type="submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save
+                    </button>
                 </div>
             </form>
         </div>
     </div>
-</div>
+</section>

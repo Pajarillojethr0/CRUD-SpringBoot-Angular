@@ -1,1 +1,43 @@
-<p>employee-details works!</p>
+<section class="sectionClass">
+    <div class="card col-md-6 offset-md-3 no-padding">
+        <div class="card-header">
+            <h2 id="titleEM" class="card-title">Employee Details</h2>
+        </div>
+        <div class="card-body" style="max-height: calc(90% - 30px); overflow-y: auto;">
+            <table>
+                <tr>
+                    <td>
+                        <label id="lblDetails"><b>First&nbsp;Name: </b></label> 
+                    </td>
+                    <td>
+                        <label id="lblDetails" >{{employee.firstName}}</label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="lblDetails"><b>Last&nbsp;Name: </b></label> 
+                    </td>
+                    <td>
+                        <label id="lblDetails" >{{employee.lastName}}</label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="lblDetails"><b>Email: </b></label> 
+                    </td>
+                    <td>
+                        <label id="lblDetails" >{{employee.email}}</label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="lblDetails"><b>Password: </b></label> 
+                    </td>
+                    <td>
+                        <label id="lblDetails">{{employee.password}}</label> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
