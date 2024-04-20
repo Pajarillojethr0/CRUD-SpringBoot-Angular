@@ -1,8 +1,6 @@
-FROM maven:3-openjdk-17 AS build
-COPY . /app
-RUN mvn clean package -DskipTests=true
 
-FROM openjdk:17-slim
-COPY --from=build /app/target/CRUD-0.0.1-SNAPSHOT.jar CRUD.jar
+FROM openjdk:17.0.1-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/CRUD-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","CRUD.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
